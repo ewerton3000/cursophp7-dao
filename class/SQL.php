@@ -7,23 +7,23 @@ class Sql extends PDO{
 	//Criando um metodo construtor para criar a conexão com o banco de dados!
 	public function __construct(){
 		//Instanciando a classe de extensão PDO para fazer a conexão com o banco de dados!
-		$this->conn = new PDO("mysql:host=localhost;dbname=dbphp7", "root" ,"");
+		//$this->conn = new PDO("mysql:host=localhost;dbname=dbphp7", "root" ,"");
 		//conexão com o sqlserver!
-		//$conn = new PDO("sqlsrv:Database=dbphp7;server=LAPTOP-9H600M4N\SQL;ConnectionPooling=0;", "sa" ,"root");
+		$this->conn = new PDO("sqlsrv:Database=dbphp7;server=LAPTOP-9H600M4N\SQL;ConnectionPooling=0;", "sa" ,"root");
 
 	}
 
-	private function setParams($statment,$parameters=array()){
+	private function setParams($statement,$parameters=array()){
 		foreach($parameters as $key => $value){
 			
 			//Chamando as funções do setParam!
 
-			$this->setParam($key,$value);
+			$this->setParam($statement,$key,$value);
 		}
 	}
-	private function setParam($statment,$key,$value){
+	private function setParam($statement,$key,$value){
 
-		$statment->bindParam($key,$value);
+		$statement->bindParam($key,$value);
 
 	}
 
