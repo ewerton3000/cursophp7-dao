@@ -34,7 +34,46 @@ $root->loadbyId(5);
 //echo json_encode($search);
 
 
-$usuario= new Usuario();
-$usuario->login("jose" , "1234567890");
+//$usuario= new Usuario();
+//$usuario->login("jose" , "1234567890");
+
+
+//usando o insert para inserir as informações abaixo no banco de dados
+
+
+//trecho do update
+$usuario=new Usuario();
+
+//Abaixo dentro dos parenteses vc vai escolher a id que vai ser alterada!
+$usuario->loadbyId(6);
+
+//inserido os dados para substituir os que estão na id acima!
+$usuario->update("éden","796");
+
+//mostrando na tela com echo!
 echo $usuario;
+
+
+
+
+
+
+
+
+
+
+//instanciando a classe Usuario
+//trecho do insert
+//$aluno = new Usuario("aluno","@lun0");
+
+//Puxando os sets correspondentes das linhas usuario e senha"
+//$aluno->setDeslogin("aluno");
+//$aluno->setDessenha("123");
+
+//Puxando a função da classe para a variavel!
+//$aluno->insert();
+
+
+//echo $aluno;
+
 ?>
