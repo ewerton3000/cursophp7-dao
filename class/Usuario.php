@@ -162,6 +162,23 @@ public function update($login , $password){
 	));
 }
 
+
+public function delete(){
+	$sql = new Sql();
+
+//usando a query para funcionar o delete
+	//Esquema:$sql->query("DELETE FROM nome da tabela WHERE nome do campo(id) = :ID")
+	$sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID",array(
+		':ID'=>$this->getIdusuario()
+
+
+	));
+	//Abaixo usamos o sets correspondentes da id escolhida!
+		$this->setIdusuario(0);
+		$this->setDeslogin("");
+		$this->setDessenha("");
+		$this->setDtcadastro(new DateTime());
+}
 //Os parenteses são para vc não dar erro na hora de inserir os dados no insert lá do index.php se der erro não vaiser inserido nenhum dado e seder certo OK!
 public function __construct($login = "" ,$password = ""){
 	$this->setDeslogin($login);

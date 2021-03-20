@@ -27,11 +27,19 @@ $root->loadbyId(5);
 //Transformando os dados em json na execução! 
 //echo json_encode($lista)
 
-//carrega uma lista de usuarios buscando pelo login!
+
+
+
+/*Método Listar:
+carrega uma lista de usuarios buscando pelo login!
 //Instanciando a classe com a busca!
 //$search = Usuario::search("jo");
 //Acima vc busca o usuario que começa com "jo" ou outro nome que esteja registrado no banco de dados escolhido!
-//echo json_encode($search);
+echo json_encode($search);
+*/
+
+
+
 
 
 //$usuario= new Usuario();
@@ -41,7 +49,7 @@ $root->loadbyId(5);
 //usando o insert para inserir as informações abaixo no banco de dados
 
 
-//trecho do update
+/* trecho do update
 $usuario=new Usuario();
 
 //Abaixo dentro dos parenteses vc vai escolher a id que vai ser alterada!
@@ -52,7 +60,7 @@ $usuario->update("éden","796");
 
 //mostrando na tela com echo!
 echo $usuario;
-
+*/
 
 
 
@@ -75,5 +83,14 @@ echo $usuario;
 
 
 //echo $aluno;
+
+
+
+
+$usuario=new Usuario();
+$usuario->loadbyId(6);
+$usuario->delete();
+echo $usuario;
+
 
 ?>
